@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Appointments</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <div class="max-w-3xl mx-auto p-6">
+    <h1 class="text-4xl font-bold mb-6 text-cyan-400">Appointments</h1>
+
+    <div id="appointments" class="space-y-4 mb-8">
+      {% include 'appointments_list.html' %}
+    </div>
+
+    <form hx-post="/appointments/add" hx-target="#appointments" hx-swap="innerHTML" class="bg-gray-800 p-4 rounded-lg shadow-md space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-1">Date</label>
+        <input name="date" type="date" required class="w-full px-3 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Description</label>
+        <input name="description" type="text" required placeholder="Description..." class="w-full px-3 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+      </div>
+      <button type="submit" class="bg-cyan-600 hover:bg-cyan-700 transition px-4 py-2 rounded text-white font-semibold">
+        ➕ Add Appointment
+      </button>
+    </form>
+
+    <a href="/" class="block mt-8 text-cyan-400 hover:underline">← Back to Dashboard</a>
+  </div>
+</body>
+</html>
+

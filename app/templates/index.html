@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meditrack Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+</head>
+<body class="bg-gradient-to-tr from-gray-900 via-black to-gray-800 min-h-screen text-white font-sans">
+
+  <div class="max-w-4xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold mb-8 text-center tracking-tight">🧠 Meditrack Dashboard</h1>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <a href="/appointments" class="bg-gradient-to-br from-blue-600 to-cyan-500 hover:scale-105 hover:ring-2 ring-cyan-300 transition-all rounded-xl p-6 shadow-lg">
+        <h2 class="text-xl font-semibold mb-2">Appointments</h2>
+        <p class="text-sm opacity-80">Track your scheduled visits</p>
+      </a>
+
+      <a href="/symptoms" class="bg-gradient-to-br from-indigo-600 to-purple-500 hover:scale-105 hover:ring-2 ring-purple-300 transition-all rounded-xl p-6 shadow-lg">
+        <h2 class="text-xl font-semibold mb-2">Symptoms</h2>
+        <p class="text-sm opacity-80">Log physical or mental symptoms</p>
+      </a>
+
+      <a href="/medications" class="bg-gradient-to-br from-pink-600 to-rose-500 hover:scale-105 hover:ring-2 ring-pink-300 transition-all rounded-xl p-6 shadow-lg">
+        <h2 class="text-xl font-semibold mb-2">Medications</h2>
+        <p class="text-sm opacity-80">Track prescriptions and dosages</p>
+      </a>
+    </div>
+
+    <p class="mt-12 text-center text-xs text-gray-500">Meditrack &copy; {{ now().year }} – Manage with clarity</p>
+  </div>
+
+</body>
+</html>
+

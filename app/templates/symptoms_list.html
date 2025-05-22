@@ -1,0 +1,19 @@
+{% for symptom in symptoms %}
+  <div class="bg-gray-800 p-4 rounded-lg shadow flex justify-between items-center transition hover:scale-[1.01] duration-200">
+    <div>
+      <p class="text-lg font-semibold text-rose-300">{{ symptom.date }}</p>
+      <p class="text-gray-300">{{ symptom.symptom }}</p>
+    </div>
+    <button 
+      hx-delete="/symptoms/{{ symptom.id }}" 
+      hx-target="#symptoms" 
+      hx-swap="innerHTML"
+      class="text-sm text-red-400 hover:text-red-600 transition"
+    >
+      ✖ Delete
+    </button>
+  </div>
+{% else %}
+  <p class="text-center text-gray-500">No symptoms recorded.</p>
+{% endfor %}
+

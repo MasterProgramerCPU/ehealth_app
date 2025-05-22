@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Symptoms</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <div class="max-w-3xl mx-auto p-6">
+    <h1 class="text-4xl font-bold mb-6 text-rose-400">Symptoms</h1>
+
+    <div id="symptoms" class="space-y-4 mb-8">
+      {% include 'symptoms_list.html' %}
+    </div>
+
+    <form hx-post="/symptoms/add" hx-target="#symptoms" hx-swap="innerHTML" class="bg-gray-800 p-4 rounded-lg shadow-md space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-1">Date</label>
+        <input name="date" type="date" required class="w-full px-3 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-rose-500">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Symptom</label>
+        <input name="symptom" type="text" required placeholder="Symptom..." class="w-full px-3 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-rose-500">
+      </div>
+      <button type="submit" class="bg-rose-600 hover:bg-rose-700 transition px-4 py-2 rounded text-white font-semibold">
+        ➕ Add Symptom
+      </button>
+    </form>
+
+    <a href="/" class="block mt-8 text-rose-400 hover:underline">← Back to Dashboard</a>
+  </div>
+</body>
+</html>
+
